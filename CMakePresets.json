@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {"major": 3, "minor": 21, "patch": 0},
+  "configurePresets": [
+    {"name":"desktop","displayName":"Desktop Release (Ninja)","generator":"Ninja","binaryDir":"${sourceDir}/build/desktop","cacheVariables":{"CMAKE_BUILD_TYPE":"Release"}},
+    {"name":"windows-vs2022","displayName":"Windows x64 / Visual Studio 2022","generator":"Visual Studio 17 2022","architecture":"x64","binaryDir":"${sourceDir}/build/vs2022"},
+    {"name":"headless-tests","displayName":"Physics and save tests","generator":"Ninja","binaryDir":"${sourceDir}/build/tests","cacheVariables":{"CMAKE_BUILD_TYPE":"Debug","SLINGSHIFT_BUILD_GAME":"OFF"}}
+  ],
+  "buildPresets":[
+    {"name":"desktop","configurePreset":"desktop"},
+    {"name":"windows-release","configurePreset":"windows-vs2022","configuration":"Release"},
+    {"name":"headless-tests","configurePreset":"headless-tests"}
+  ],
+  "testPresets":[
+    {"name":"desktop","configurePreset":"desktop","output":{"outputOnFailure":true}},
+    {"name":"windows-release","configurePreset":"windows-vs2022","configuration":"Release","output":{"outputOnFailure":true}},
+    {"name":"headless-tests","configurePreset":"headless-tests","output":{"outputOnFailure":true}}
+  ]
+}

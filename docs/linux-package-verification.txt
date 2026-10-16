@@ -1,0 +1,1 @@
+Route smoke: outcome 1, arrival time 3.083941 s

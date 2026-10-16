@@ -1,0 +1,141 @@
+{
+  "browser": "153.0.8010.0",
+  "checks": [
+    "home screen boots",
+    "keyboard navigation starts campaign",
+    "signal 1 enters aiming state",
+    "signal 1 launches through mouse input",
+    "pause button holds flight",
+    "paused physics clock is frozen",
+    "Escape resumes flight",
+    "signal 1 arrives through actual game loop",
+    "signal 1 earns three stars and saves progression",
+    "signal 2 enters aiming state",
+    "signal 2 refinement keeps launch staged",
+    "signal 2 launches through mouse input",
+    "signal 2 arrives through actual game loop",
+    "signal 2 earns three stars and saves progression",
+    "signal 3 enters aiming state",
+    "signal 3 refinement keeps launch staged",
+    "signal 3 launches through mouse input",
+    "signal 3 arrives through actual game loop",
+    "signal 3 earns three stars and saves progression",
+    "signal 4 enters aiming state",
+    "signal 4 refinement keeps launch staged",
+    "signal 4 launches through mouse input",
+    "signal 4 arrives through actual game loop",
+    "signal 4 earns three stars and saves progression",
+    "signal 5 enters aiming state",
+    "signal 5 refinement keeps launch staged",
+    "signal 5 launches through mouse input",
+    "signal 5 arrives through actual game loop",
+    "signal 5 earns three stars and saves progression",
+    "signal 6 enters aiming state",
+    "signal 6 refinement keeps launch staged",
+    "signal 6 launches through mouse input",
+    "signal 6 arrives through actual game loop",
+    "signal 6 earns three stars and saves progression",
+    "signal 7 enters aiming state",
+    "signal 7 refinement keeps launch staged",
+    "signal 7 launches through mouse input",
+    "signal 7 arrives through actual game loop",
+    "signal 7 earns three stars and saves progression",
+    "signal 8 enters aiming state",
+    "signal 8 refinement keeps launch staged",
+    "signal 8 launches through mouse input",
+    "signal 8 arrives through actual game loop",
+    "signal 8 earns three stars and saves progression",
+    "signal 9 enters aiming state",
+    "signal 9 refinement keeps launch staged",
+    "signal 9 launches through mouse input",
+    "signal 9 arrives through actual game loop",
+    "signal 9 earns three stars and saves progression",
+    "signal 10 enters aiming state",
+    "signal 10 refinement keeps launch staged",
+    "signal 10 launches through mouse input",
+    "signal 10 arrives through actual game loop",
+    "signal 10 earns three stars and saves progression",
+    "signal 11 enters aiming state",
+    "signal 11 refinement keeps launch staged",
+    "signal 11 launches through mouse input",
+    "signal 11 arrives through actual game loop",
+    "signal 11 earns three stars and saves progression",
+    "signal 12 enters aiming state",
+    "signal 12 refinement keeps launch staged",
+    "signal 12 launches through mouse input",
+    "signal 12 arrives through actual game loop",
+    "signal 12 earns three stars and saves progression",
+    "final gate leads to campaign ending",
+    "progress survives browser reload",
+    "settings menu opens",
+    "preferences write a versioned local save",
+    "volume control changes saved level",
+    "star collision enters failure state",
+    "R instantly retries after failure",
+    "midflight drag dilates time while aiming",
+    "release spends the correction burn",
+    "spent burn cannot be used twice",
+    "portrait touch menu starts game",
+    "fresh mobile profile starts at the first signal",
+    "touch slingshot launches craft",
+    "touch route reaches destination",
+    "touch refinement holds a staged route",
+    "touch Launch button starts refined route",
+    "final signal is achievable through touch refinement",
+    "cancelled touch never launches or spends a burn",
+    "game survives mobile orientation change",
+    "no uncaught JavaScript runtime errors"
+  ],
+  "routes": [
+    {
+      "level": 1,
+      "time": 3.100394587
+    },
+    {
+      "level": 2,
+      "time": 3.078497139
+    },
+    {
+      "level": 3,
+      "time": 3.25893797
+    },
+    {
+      "level": 4,
+      "time": 2.974273314
+    },
+    {
+      "level": 5,
+      "time": 3.131924325
+    },
+    {
+      "level": 6,
+      "time": 3.148144931
+    },
+    {
+      "level": 7,
+      "time": 2.796893386
+    },
+    {
+      "level": 8,
+      "time": 3.190457729
+    },
+    {
+      "level": 9,
+      "time": 4.679578733
+    },
+    {
+      "level": 10,
+      "time": 3.149632139
+    },
+    {
+      "level": 11,
+      "time": 3.181569048
+    },
+    {
+      "level": 12,
+      "time": 3.083941308
+    }
+  ],
+  "errors": [],
+  "totalChecks": 84
+}

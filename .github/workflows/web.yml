@@ -1,0 +1,23 @@
+name: Browser build
+on: workflow_dispatch
+jobs:
+  web:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Emscripten SDK
+        run: |
+          git clone --depth 1 https://github.com/emscripten-core/emsdk.git /tmp/emsdk
+          /tmp/emsdk/emsdk install 3.1.6
+          /tmp/emsdk/emsdk activate 3.1.6
+      - name: Build
+        shell: bash
+        run: |
+          source /tmp/emsdk/emsdk_env.sh
+          emcmake cmake -S . -B build/web -G Ninja -DCMAKE_BUILD_TYPE=Release -DSLINGSHIFT_BUILD_TESTS=OFF
+          cmake --build build/web --parallel 2
+          python3 tools/package_release.py --web build/web
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SLINGSHIFT-Web
+          path: dist/*

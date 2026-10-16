@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "public browser package omits QA hooks",
+    "extracted web ZIP plays a three-star desktop arrival",
+    "public release writes the expected versioned progress",
+    "extracted web ZIP plays a three-star touch arrival",
+    "synthesized audio runs in the browser AudioContext",
+    "public canvas resizes to mobile landscape",
+    "public package has no uncaught JavaScript errors",
+    "public package has no missing HTTP assets"
+  ],
+  "errors": [],
+  "missing": [],
+  "desktopAudio": [],
+  "mobileAudio": [
+    "running",
+    "closed",
+    "closed"
+  ],
+  "wasmSha256": "9f2eaffc3e094921b717a8e9fcdef08405108bd0a8dcd3f9a7e530c82d325737"
+}

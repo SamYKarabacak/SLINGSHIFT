@@ -1,0 +1,14 @@
+First light: 1 in 3.10039 s; launch 289.627, -12.94
+Blue bend: 1 in 3.0785 s; launch 289.125, 23.3673
+Thread the needle: 1 in 3.25894 s; launch 289.652, 0.522506
+Afterglow: 1 in 2.97427 s; launch 276.8, 80.6043
+Split current: 1 in 3.13192 s; launch 288.789, -18.5093
+Stone garden: 1 in 3.14814 s; launch 289.978, 13.9951
+Low orbit: 1 in 2.79689 s; launch 266.926, -115.287
+Twin suns: 1 in 3.19046 s; launch 290.524, 0.001538
+Dogleg: 1 in 4.67958 s; launch 169.085, -76.8854
+Crosswind: 1 in 3.14963 s; launch 291.535, 8.68976
+Cinder run: 1 in 3.18157 s; launch 289.368, 7.74429
+Slingshift: 1 in 3.08394 s; launch 289.599, 16.4172
+103 checks, 0 failures
+9 save checks, 0 failures

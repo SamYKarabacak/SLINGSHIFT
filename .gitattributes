@@ -1,0 +1,5 @@
+vendor/** linguist-vendored
+licenses/** linguist-documentation
+*.png binary
+*.ico binary
+*.ttf binary

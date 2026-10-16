@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"><meta name="theme-color" content="#070b17"><link rel="icon" href="icon.png"><title>SLINGSHIFT</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#070b17;color:#e9f1f6;font-family:system-ui,sans-serif}body{overscroll-behavior:none}canvas{display:block;width:100%!important;height:100%!important;outline:none;touch-action:none}#loading{position:fixed;inset:0;display:grid;place-content:center;text-align:center;background:#070b17;z-index:2}#loading b{font-size:32px;letter-spacing:.18em;font-weight:500}#loading span{color:#8fa5b8;font-size:14px;margin-top:20px}#bar{width:240px;height:2px;margin:24px auto;background:#192638}#fill{height:100%;background:#6ff0cd;width:5%}#error{display:none;position:fixed;inset:15%;line-height:1.6;padding:32px;background:#0f1828;border:1px solid #ff8388;z-index:3}a{color:#6ff0cd}
+</style></head><body>
+<div id="loading"><b>SLINGSHIFT</b><span id="status">Preparing your departure</span><div id="bar"><div id="fill"></div></div></div>
+<canvas id="canvas" tabindex="0" aria-label="Slingshift orbital puzzle game. Drag backward from your spacecraft and release to launch. Tab and Enter navigate menus. Arrow keys aim, plus and minus change power, Space launches, R retries, Escape pauses."></canvas>
+<div id="error" role="alert"></div>
+<script>
+var Module={
+canvas:document.getElementById('canvas'),
+print:console.log,printErr:console.warn,
+setStatus:function(text){document.getElementById('status').textContent=text||'Ready';var m=text.match(/\((\d+(?:\.\d+)?)\/(\d+)\)/);if(m)document.getElementById('fill').style.width=(Number(m[1])/Number(m[2])*100)+'%';},
+onRuntimeInitialized:function(){document.getElementById('loading').style.display='none';Module.canvas.focus();},
+onAbort:function(reason){var e=document.getElementById('error');e.style.display='block';e.textContent='Unable to start SLINGSHIFT. Reload the page in a WebGL-capable browser. If you opened index.html directly, serve this folder over HTTP first. '+reason;}
+};
+Module.canvas.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','Tab'].includes(e.key))e.preventDefault();if(e.key==='F11'){e.preventDefault();if(!document.fullscreenElement)Module.canvas.requestFullscreen?.();else document.exitFullscreen?.();}});
+Module.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();Module.onAbort('The graphics context was lost. Reload to continue; saved progress is kept.');});
+</script>
+{{{ SCRIPT }}}
+</body></html>
