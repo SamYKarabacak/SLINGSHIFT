@@ -18,7 +18,9 @@ After loading, the game runs offline and saves progress on your device.
 
 **Browser:** [Play the published release](https://samykar.itch.io/slingshift) on itch.io. No installation is required.
 
-**Windows:** For a desktop release archive, extract the entire Windows ZIP and open `slingshift.exe`. Keep its `assets` directory alongside it. For the browser build, upload the web ZIP to itch.io, or serve its extracted directory over HTTP:
+**Windows:** Extract the entire desktop ZIP and open `slingshift.exe`. Keep its `assets` directory alongside it.
+
+**Local browser build:** Extract the web ZIP and serve its folder over HTTP:
 
 ```sh
 python3 -m http.server 8000
@@ -151,6 +153,6 @@ The game code and original procedural artwork/audio use the [MIT license](LICENS
 
 ## Credits
 
-**Created by Sam Y. Karabacak.**
+**Game created by BravenDev · Author: SamYKar.**
 
 See [CREDITS.md](CREDITS.md) for the project credit and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for license notices.
