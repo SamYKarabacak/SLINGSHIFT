@@ -1,19 +1,19 @@
 # Validation report
 
-Prepared 16 October 2026. These are observed build and test results, not a claim that every platform has been tested.
+Recorded 16 October 2026 for version 1.0.0. Platform coverage and outstanding checks are listed below.
 
 ## Platform status
 
 | Target | Build | Runtime verification |
 | --- | --- | --- |
 | Browser / WebAssembly | Built with Emscripten 3.1.6 and raylib 5.5 | Passed automated Chromium 153.0.8010.0 playthrough; desktop and emulated touch input |
-| Windows x64 | Cross-compiled with MinGW GCC 13; Windows GUI PE executable, icon and version resources | **Not runtime-verified on Windows.** Wine could not start because the environment prohibits its server socket |
+| Windows x64 | Cross-compiled with MinGW GCC 13; Windows GUI PE executable, icon and version resources | **Not runtime-verified on Windows.** Wine could not start because socket access was unavailable during validation |
 | Linux x64 | Built on Ubuntu 24.04.3 with GCC 13.3 and CMake 3.28.3 | Ran under Xvfb with software OpenGL; verified actual game-loop arrivals on signals 1, 9 and 12 |
-| Visual Studio | Complete CMake configuration/preset supplied | Visual Studio itself was unavailable; that generator was not executed |
-| Physical Android / iOS browsers | Responsive web target supplied | **Not physically tested.** Chromium touch emulation is not a device test |
+| Visual Studio | CMake preset included | Visual Studio was unavailable; that generator was not tested |
+| Physical Android / iOS browsers | Responsive browser build | **Not tested on physical devices.** Browser checks used Chromium touch emulation |
 | Native Android / iOS | No native package | Outside this release's scope |
 
-At the time the original build validation was prepared, there was no hosted deployment. The owner subsequently published the game at [itch.io](https://samykar.itch.io/slingshift) and reported successfully launching and playing it. The original automated browser test results below remain separate from that owner-reported manual check.
+The game is published on [itch.io](https://samykar.itch.io/slingshift). The automated browser results below cover local builds; hosted iframe behavior needs a separate check.
 
 ## Automated checks
 
@@ -27,7 +27,7 @@ At the time the original build validation was prepared, there was no hosted depl
 - Three-star solutions for all twelve levels, plus small aim-perturbation checks.
 - Versioned save round trips, progression, invalid/truncated data and preservation of a good profile on decode failure.
 
-AddressSanitizer and UndefinedBehaviorSanitizer also passed these tests. LeakSanitizer could not inspect processes in this restricted environment; it was disabled with `ASAN_OPTIONS=detect_leaks=0`. No leak-check pass is claimed.
+AddressSanitizer and UndefinedBehaviorSanitizer passed. LeakSanitizer could not inspect processes on the validation host, so it was disabled with `ASAN_OPTIONS=detect_leaks=0`. Memory leaks were not checked.
 
 **84 browser checks passed.** The suite drove actual mouse, keyboard and touch events against the compiled C++ game:
 
@@ -49,8 +49,8 @@ The produced archives were extracted into fresh directories. The extracted sourc
 
 ## Remaining limits
 
-Windows binaries are genuine compiled executables, but native Windows startup, driver behavior, audio and filesystem behavior remain unverified. The Windows-compiled test executables also could not run under blocked Wine. The executable's import table was inspected: only Windows system DLLs are required; MinGW C++ runtime DLLs are statically linked.
+The Windows release still needs native testing for startup, graphics drivers, audio and filesystem behavior. The Windows test executables could not run under Wine during validation. The executable's import table was inspected: only Windows system DLLs are required; MinGW C++ runtime DLLs are statically linked.
 
-Firefox, Safari, actual mobile devices and the itch.io embed were not available for validation. Browser audio initialized during automated interaction without a runtime error, but headless testing does not establish a comfortable sound mix. Human usability and enjoyment testing remains advisable before announcing a public release.
+Firefox, Safari, physical mobile devices and the itch.io embed were not covered by these checks. Browser audio initialized without a runtime error. Listen on speakers and headphones to check the mix, and playtest the tutorial and campaign with new players.
 
-There are no known missing core game systems. The remaining release checks concern platform coverage, hosted distribution and fresh-player feedback; use `RELEASE_CHECKLIST.md` before public announcement.
+The remaining checks cover platforms, hosted downloads and player feedback. Track them in [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).

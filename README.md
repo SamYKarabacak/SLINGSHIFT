@@ -8,9 +8,9 @@
 
 *Cover artwork is promotional; the gameplay screenshots below are from the actual game.*
 
-SLINGSHIFT is a complete, compact orbital puzzle game built in C++20 with raylib. Pull back from your spacecraft, read the projected path, and release. Planets bend your route; stars and rocks punish a careless line. There are twelve signals to find, thirty-six stars to earn, and one emergency burn per flight.
+SLINGSHIFT is an orbital puzzle game built in C++20 with raylib. Pull back from your spacecraft, read the projected path, and release. Planets bend your route; stars and rocks punish a careless line. There are twelve signals to find, thirty-six stars to earn, and one emergency burn per flight.
 
-No accounts, servers, paid APIs, runtime downloads or network connection are required after loading the game.
+After loading, the game runs offline and saves progress on your device.
 
 ![The deep field, with route and gravity overlays](docs/screenshots/deep-field.png)
 
@@ -60,7 +60,7 @@ ctest --preset windows-release
 .\build\vs2022\Release\slingshift.exe
 ```
 
-Alternatively, select any installed Visual Studio generator with `cmake -G`. The `assets` folder is copied next to the executable automatically. The supplied Windows executable was cross-compiled with MinGW, rather than built by Visual Studio. See [the validation report](docs/VALIDATION.md) for the exact platform coverage.
+Alternatively, select any installed Visual Studio generator with `cmake -G`. The `assets` folder is copied next to the executable automatically. The Windows release was cross-compiled with MinGW. See [the validation report](docs/VALIDATION.md) for the tested platforms.
 
 ### Linux
 
@@ -86,7 +86,7 @@ python3 tools/package_release.py --web build/web
 python3 -m http.server --directory build/web 8000
 ```
 
-Emscripten 3.1.6 was built and tested here. `web/legacy_glfw.h` covers two window-management APIs missing from that old GLFW port; the game explicitly sizes the canvas from CSS. Newer Emscripten versions use their own implementations. `MINIFY_HTML=0` avoids an HTML-minifier bug in the tested SDK packaging. Modern SDK builds are configured but not claimed as tested.
+The recorded browser build uses Emscripten 3.1.6. `web/legacy_glfw.h` covers two window-management APIs missing from its GLFW port; the game sizes the canvas from CSS. Newer Emscripten versions use their own implementations. `MINIFY_HTML=0` avoids an HTML-minifier bug in the tested SDK. Newer SDK builds still need verification.
 
 ### Headless tests
 
@@ -98,7 +98,7 @@ cmake --build --preset headless-tests
 ctest --preset headless-tests
 ```
 
-For AddressSanitizer and UndefinedBehaviorSanitizer, add `-DSLINGSHIFT_SANITIZE=ON` to a fresh Debug configuration. Some restricted containers cannot run LeakSanitizer; the validation report records that limitation.
+For AddressSanitizer and UndefinedBehaviorSanitizer, add `-DSLINGSHIFT_SANITIZE=ON` to a fresh Debug configuration. LeakSanitizer could not run during the recorded validation; see the report for details.
 
 An optional Playwright suite plays every level using actual input, verifies progression, and checks failure, pause, correction and mobile touch behavior:
 
@@ -118,7 +118,7 @@ Set `SLINGSHIFT_BROWSER` to an existing Chromium executable if needed. The suite
 | File | Responsibility |
 | --- | --- |
 | `src/physics.*` | Double-precision vectors, gravity, velocity Verlet, swept collisions, prediction, burn limits and scoring; no raylib dependency |
-| `src/levels.cpp` | Twelve hand-arranged levels and verified launch vectors |
+| `src/levels.cpp` | Twelve levels and tested three-star launch vectors |
 | `src/game.*` | Input, menus, tutorial, progression, fixed-step clock, particles and responsive layout |
 | `src/art.*` | Deterministic procedural planet textures, starfield, spacecraft, rings and typography |
 | `src/audio.*` | Procedural sound effects and a quiet synthesized ambient bed |

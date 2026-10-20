@@ -1,24 +1,24 @@
 # Release checklist
 
-## Automated / local validation
+## Recorded build and test results
 
 - [x] C++20 physics and game compile with vendored raylib.
 - [x] Every signal has a reproducible, achievable three-star route.
 - [x] Physics, deterministic prediction, collision, scoring and save-format tests pass.
-- [x] AddressSanitizer and UndefinedBehaviorSanitizer checks pass with LeakSanitizer disabled for this restricted environment.
+- [x] AddressSanitizer and UndefinedBehaviorSanitizer checks pass. LeakSanitizer was disabled on the validation host.
 - [x] Linux desktop runs with software-rendered OpenGL.
-- [x] WebAssembly and Windows x64 binaries are actually compiled.
+- [x] WebAssembly and Windows x64 builds complete.
 - [x] Cover artwork, icons, original procedural graphics and synthesized audio are included.
 - [x] Source, build configurations, licensing and publishing materials are included.
 
-The precise browser and platform checks are recorded in `VALIDATION.md`; this checklist does not imply unperformed tests.
+See [VALIDATION.md](VALIDATION.md) for platform coverage and recorded results.
 
-## Owner checks before announcing the release
+## Manual release checks
 
 - [ ] Run the Windows ZIP on a clean Windows 10/11 x64 machine, with both integrated and dedicated graphics if available. Confirm audio, icons, resizing, fullscreen, save/reload and the complete campaign.
 - [ ] Try the browser ZIP inside the actual itch.io preview iframe; test initial focus, audio activation, fullscreen, save/reload and orientation changes.
 - [ ] Test a physical Android device and an iPhone/iPad in current Chrome/Safari. Mobile emulation is useful but is not a substitute for device testing.
-- [ ] Check Firefox and Safari desktop. This environment's automated browser coverage is Chromium.
+- [ ] Check Firefox and Safari desktop. Automated browser coverage uses Chromium.
 - [ ] Ask a few fresh players to attempt the tutorial without instructions. Watch for unclear drag direction, accidental burns or frustrating precision demands. Adjust based on observed play.
 - [ ] Listen to sound effects and ambient volume on speakers and headphones. Automated audio loading does not establish a comfortable mix.
 - [ ] Verify text and trajectories remain readable on a dim mobile screen. Confirm reduced-motion and glow preferences suit you.
