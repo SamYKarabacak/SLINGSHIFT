@@ -153,6 +153,6 @@ The game code and original procedural artwork/audio use the [MIT license](LICENS
 
 ## Credits
 
-**Game created by BravenDev · Author: SamYKar.**
+**Game created by SamYKar.**
 
 See [CREDITS.md](CREDITS.md) for the project credit and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for license notices.

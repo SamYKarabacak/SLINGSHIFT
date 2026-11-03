@@ -18,4 +18,4 @@ Missed the gate? Retry instantly. Almost there? You have one emergency burn.
 
 A small game about finding a way through.
 
-**Game created by BravenDev · Author: SamYKar.**
+**Game created by SamYKar.**

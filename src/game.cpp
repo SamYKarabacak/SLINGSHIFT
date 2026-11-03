@@ -364,7 +364,7 @@ void Game::drawCredits() {
         const float column=(width-105)/2;
         art.wrapped("Pull backward from your ship and release to launch. Drag empty space to refine the projected route, then tap Launch. In flight, drag anywhere for one emergency burn. Time slows while aiming.",{35,121,column,180},18);
         art.wrapped("Keyboard: arrows aim; Up / Down change power; Shift refines; Space launches. In flight, arrows choose a burn direction and Space fires. R retries. Escape pauses. Tab and Enter navigate. F11 toggles fullscreen.",{70+column,121,column,180},18);
-        art.wrapped("Game created by BravenDev. A small game about finding a way. Simplified fixed-body gravity; not a spaceflight simulator. Progress stays on this device.",{35,322,width-70,75},15);
+        art.wrapped("Game created by SamYKar. A small game about finding a way. Simplified fixed-body gravity; not a spaceflight simulator. Progress stays on this device.",{35,322,width-70,75},15);
         if(button("Back to space",{width/2-180,height-62,360,46},true)) { screen=Screen::Home; focus=0; }
         return;
     }
@@ -374,7 +374,7 @@ void Game::drawCredits() {
     art.text("FLIGHT MANUAL",x,310,12,mint,true);
     art.wrapped("Mouse / touch: pull back from the ship and release. Drag empty space to refine your aim, then tap Launch. In flight, pull anywhere for one correction. Time slows while you aim.",{x,341,w,110},18);
     art.wrapped("Keyboard: Left / Right rotate. Up / Down or + / - change power. Hold Shift for precision. Space launches. In flight, arrows choose a burn direction and Space fires. R retries. Escape pauses. Tab and Enter navigate menus. F11 toggles fullscreen.",{x,450,w,150},17);
-    art.wrapped("Game created by BravenDev. A small game about finding a way. This is a simplified, fixed-body gravity puzzle, not a spaceflight simulator. Progress stays on this device.",{x,portrait?612.f:582.f,w,105},15);
+    art.wrapped("Game created by SamYKar. A small game about finding a way. This is a simplified, fixed-body gravity puzzle, not a spaceflight simulator. Progress stays on this device.",{x,portrait?612.f:582.f,w,105},15);
     if(button("Back to space",{x,portrait?780.f:711.f,w,48},true)) { screen=Screen::Home; focus=0; }
 }
 void Game::drawComplete() {
@@ -386,7 +386,7 @@ void Game::drawComplete() {
         art.wrapped("Some paths looked impossible from the launch pad. You found a line through every one of them.",{40,220,500,95},20);
         if(button(progress.totalStars()==36?"Fly your favorite signals":"Chase the remaining stars",{40,329,430,50},true)) { screen=Screen::Chart; focus=0; }
         if(button("Return to the quiet",{40,392,430,46})) { screen=Screen::Home; focus=0; }
-        art.text("Game created by BravenDev",width*.58f,365,14,muted);
+        art.text("Game created by SamYKar",width*.58f,365,14,muted);
         return;
     }
     const float centre=width/2;
@@ -398,7 +398,7 @@ void Game::drawComplete() {
     const float x=portrait?30:centre-220,w=portrait?width-60:440,y=portrait?500:550;
     if(button(progress.totalStars()==36?"Fly your favorite signals":"Chase the remaining stars",{x,y,w,52},true)) { screen=Screen::Chart; focus=0; }
     if(button("Return to the quiet",{x,y+68,w,46})) { screen=Screen::Home; focus=0; }
-    art.centred("Game created by BravenDev",centre,y+132,14,muted);
+    art.centred("Game created by SamYKar",centre,y+132,14,muted);
 }
 void Game::frame() {
     layout();

@@ -11,4 +11,4 @@ Pull backward from the ship and release to launch. Drag empty space to refine yo
 
 The game passed 112 C++ checks and 84 automated browser checks, including a full campaign playthrough. See `docs/VALIDATION.md` for the exact coverage and `docs/PUBLISHING.md` for itch.io and GitHub instructions. `docs/cover.png` and `docs/screenshots/` provide store artwork.
 
-Game created by **BravenDev** · Author: **SamYKar**. See `CREDITS.md` for the project credit and `THIRD_PARTY_NOTICES.md` for license notices.
+Game created by **SamYKar**. See `CREDITS.md` for the project credit and `THIRD_PARTY_NOTICES.md` for license notices.

@@ -1,6 +1,5 @@
 # SLINGSHIFT — Credits
 
-Game created by **BravenDev**.
-Author: **SamYKar**.
+Game created by **SamYKar**.
 
 © 2026 SamYKar.
